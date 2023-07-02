@@ -21,16 +21,19 @@ class LanguagePage extends StatelessWidget {
               return Column(
                 children: [
                   const CustomBackButton(title: 'Language'),
-                  const SizedBox(height: 20.0),
                   ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
+                    padding: const EdgeInsets.all(0),
                     itemCount: value.languageList.length,
                     itemBuilder: (context, index) {
                       final String language = value.languageList[index][0];
                       final bool isSelected = value.languageList[index][1];
                       return ListTile(
-                        onTap: () => value.updateAppLanguage(language),
+                        onTap: () {
+                          value.updateAppLanguage(language);
+                          Navigator.pop(context);
+                        },
                         leading: Text(
                           language,
                           style: const TextStyle(fontSize: 16.0),

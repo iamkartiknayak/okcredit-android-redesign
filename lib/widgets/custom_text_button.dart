@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:redesign_okcredit/constants.dart';
 
-class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({
+class CustomButton extends StatelessWidget {
+  const CustomButton({
     super.key,
     required this.title,
-    required this.onPressed,
+    required this.onTap,
     this.color,
-    this.padding,
+    this.margin,
     this.width,
     this.height,
     this.fontSize,
@@ -16,9 +16,9 @@ class CustomTextButton extends StatelessWidget {
   });
 
   final String title;
-  final VoidCallback onPressed;
+  final VoidCallback onTap;
   final Color? color;
-  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
   final double? width;
   final double? height;
   final double? fontSize;
@@ -27,24 +27,26 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: padding ?? const EdgeInsets.symmetric(horizontal: 10.0),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color ?? kPrimaryColor,
-          minimumSize: Size(width ?? double.infinity, height ?? 45),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(radius ?? 15.0),
-          ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: margin ?? const EdgeInsets.symmetric(horizontal: 10.0),
+        height: height ?? 45.0,
+        width: width ?? double.infinity,
+        decoration: BoxDecoration(
+          color: color ?? kPrimaryColor,
+          borderRadius: BorderRadius.circular(radius ?? 15.0),
         ),
-        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             icon != null
-                ? Icon(
-                    icon,
-                    color: Colors.white,
+                ? Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: Icon(
+                      icon,
+                      color: Colors.white,
+                    ),
                   )
                 : const SizedBox.shrink(),
             Text(

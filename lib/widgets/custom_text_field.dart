@@ -117,7 +117,7 @@ class CustomTextField extends StatelessWidget {
                   ),
                   prefixIcon: Icon(
                     prefixIcon,
-                    color: Colors.grey.shade700,
+                    color: kPrimaryColor,
                   ),
                   suffix: suffixOptions,
                 ),

@@ -5,49 +5,54 @@ import '../../constants.dart';
 class SettingTile extends StatelessWidget {
   const SettingTile({
     super.key,
-    required this.icon,
+    this.icon,
     required this.title,
     this.subTitle,
     this.onTap,
     this.trailing,
     this.hideDivider = false,
+    this.removeLPadding,
   });
 
-  final IconData icon;
-  final String title;
-  final String? subTitle;
+  final IconData? icon;
+  final dynamic title;
+  final dynamic subTitle;
   final VoidCallback? onTap;
   final Widget? trailing;
   final bool? hideDivider;
+  final bool? removeLPadding;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ListTile(
+          minLeadingWidth: 0.0,
           onTap: onTap ?? null,
-          contentPadding: const EdgeInsets.only(left: 10.0),
-          leading: Icon(
-            icon,
-            color: kPrimaryColor,
-            size: 25.0,
+          contentPadding: EdgeInsets.only(
+            left: removeLPadding == true ? 0.0 : 10.0,
           ),
-          title: Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.w500),
-          ),
-          subtitle: subTitle != null
+          leading: icon != null
+              ? Icon(
+                  icon,
+                  color: kPrimaryColor,
+                  size: 25.0,
+                )
+              : const SizedBox.shrink(),
+          title: title is String
+              ? Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.w500),
+                )
+              : title,
+          subtitle: subTitle is String
               ? Text(
                   subTitle!,
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: kSubTitleStyle,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 )
-              : null,
+              : subTitle,
           trailing: trailing,
         ),
         hideDivider == true
@@ -55,7 +60,7 @@ class SettingTile extends StatelessWidget {
             : const Divider(
                 color: kHighLightColor,
                 height: 5,
-              )
+              ),
       ],
     );
   }

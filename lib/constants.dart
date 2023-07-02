@@ -24,3 +24,9 @@ const kSectionHeaderStyle = TextStyle(
   fontSize: 17.0,
   fontWeight: FontWeight.bold,
 );
+
+const kSubTitleStyle = TextStyle(
+  color: Color(0xff757575),
+  fontSize: 13.0,
+  fontWeight: FontWeight.w500,
+);

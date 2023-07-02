@@ -3,6 +3,12 @@ import 'package:redesign_okcredit/pages/ledger.dart';
 import 'package:redesign_okcredit/pages/settings.dart';
 import 'package:redesign_okcredit/widgets/ledger/tab.dart';
 
+enum SwitchType {
+  appLock,
+  paymentPassword,
+  fingerPrint,
+}
+
 class DataModel with ChangeNotifier {
   final List<Widget> _navigationOptions = [
     const LedgerPage(),
@@ -127,10 +133,81 @@ class DataModel with ChangeNotifier {
     _selectedLanguage = language;
     notifyListeners();
   }
-}
 
-enum SwitchType {
-  appLock,
-  paymentPassword,
-  fingerPrint,
+  String _selectedBusinessType = 'Personal Use';
+  String get selectedBusinessType => _selectedBusinessType;
+
+  final List<List> _businessTypes = [
+    ['Personal Use', 'personal', true],
+    ['Retail Shop', 'retail', false],
+    ['Wholesale/Distributor', 'wholesale', false],
+    ['Online Services', 'online', false],
+  ];
+
+  List<List> get businessTypes => _businessTypes;
+
+  void updateBusinessType(String type) {
+    _businessTypes.forEach(
+      (element) {
+        if (element[0] != type) {
+          element[2] = false;
+        } else {
+          element[2] = true;
+          _selectedBusinessType = element[0];
+        }
+      },
+    );
+
+    notifyListeners();
+  }
+
+  String _selectedBusinessCategory = 'Select Category';
+  String get selectedBusinessCategory => _selectedBusinessCategory;
+
+  final List<List> _businessCategories = [
+    ['Apparels Store', 'apparel', false],
+    ['Eatery', 'eatery', false],
+    ['Electronics', 'electronics', false],
+    ['Fruit Shop', 'fruit', false],
+    ['Vegetable Shop', 'vegetable', false],
+    ['Medical Store', 'medicine', false],
+    ['Mobile Recharge', 'recharge', false],
+    ['Financial Services', 'profit', false],
+    ['Fancy', 'mask', false],
+    ['Kirana', 'groceries', false],
+    ['Hardware', 'tools', false],
+    ['Hotel', 'hotel', false],
+    ['Jewellery', 'jewellery', false],
+    ['Photo Studio', 'studio', false],
+    ['Repair Services', 'repair', false],
+    ['School', 'school', false],
+    ['Transport', 'transport', false],
+    ['Travel Agent', 'travel', false],
+    ['Other', 'other', false],
+  ];
+
+  List<List> get businessCategories => _businessCategories;
+
+  void updateBusinessCategory(String type) {
+    _businessCategories.forEach(
+      (element) {
+        if (element[0] != type) {
+          element[2] = false;
+        } else {
+          element[2] = true;
+          _selectedBusinessCategory = element[0];
+        }
+      },
+    );
+
+    notifyListeners();
+  }
+
+  String _activePlan = 'FREE';
+  String get activePlan => _activePlan;
+
+  void updatePlan() {
+    _activePlan = _activePlan == 'FREE' ? 'Premium' : 'FREE';
+    notifyListeners();
+  }
 }

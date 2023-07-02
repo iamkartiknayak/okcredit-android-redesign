@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:redesign_okcredit/constants.dart';
 import 'package:redesign_okcredit/model/data.dart';
+import 'package:redesign_okcredit/pages/settings/account.dart';
+import 'package:redesign_okcredit/pages/settings/backup.dart';
+import 'package:redesign_okcredit/pages/settings/find_defaulter.dart';
+import 'package:redesign_okcredit/pages/settings/help.dart';
 import 'package:redesign_okcredit/pages/settings/language.dart';
+import 'package:redesign_okcredit/pages/settings/profile.dart';
 import 'package:redesign_okcredit/pages/settings/security.dart';
+import 'package:redesign_okcredit/pages/settings/share.dart';
+import 'package:redesign_okcredit/pages/settings/subscription.dart';
+import 'package:redesign_okcredit/pages/settings/update_number.dart';
 
 import '../widgets/settings/setting_tile.dart';
 
@@ -22,42 +30,60 @@ class SettingsPage extends StatelessWidget {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const SizedBox(height: 15.0),
-                    const Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 25.0,
-                          backgroundImage: AssetImage('assets/images/user.png'),
-                        ),
-                        SizedBox(width: 15.0),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Kartik Nayak',
-                              style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                    const SizedBox(height: 20.0),
+                    GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, ProfilePage.id),
+                      child: const Row(
+                        children: [
+                          Hero(
+                            tag: 'profile',
+                            child: CircleAvatar(
+                              radius: 25.0,
+                              backgroundImage:
+                                  AssetImage('assets/images/user.png'),
                             ),
-                            Text(
-                              '80XXXXXXXX',
-                              style: TextStyle(
-                                color: kSecondaryAccent,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )
-                          ],
-                        ),
-                        Spacer(),
-                        Text(
-                          'Edit',
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                            fontWeight: FontWeight.w500,
                           ),
-                        ),
-                      ],
+                          SizedBox(width: 15.0),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 180.0,
+                                child: Text(
+                                  'Nikhil Kamat',
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  overflow: TextOverflow.clip,
+                                  maxLines: 1,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 150.0,
+                                child: Text(
+                                  'Krishna Pearls & Jewllers',
+                                  style: TextStyle(
+                                    color: kSecondaryAccent,
+                                    fontSize: 13.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                ),
+                              )
+                            ],
+                          ),
+                          Spacer(),
+                          Text(
+                            'Edit',
+                            style: TextStyle(
+                              color: kPrimaryColor,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 20.0),
                     const Divider(
@@ -71,7 +97,7 @@ class SettingsPage extends StatelessWidget {
                       title: 'Create New Business',
                     ),
                     SettingTile(
-                      onTap: () {},
+                      onTap: () => Navigator.pushNamed(context, AccountPage.id),
                       icon: Icons.account_circle,
                       title: 'Account',
                       hideDivider: true,
@@ -94,27 +120,38 @@ class SettingsPage extends StatelessWidget {
                       child: ListView(
                         children: [
                           SettingTile(
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              SubscriptionPage.id,
+                            ),
                             icon: Icons.stars,
                             title: 'OkCredit Subscription Plan',
                             subTitle:
                                 'Unlimited SMS, Ad Free, Priority Customer Support',
                           ),
                           SettingTile(
-                            onTap: () =>
-                                Navigator.pushNamed(context, LanguagePage.id),
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              LanguagePage.id,
+                            ),
                             icon: Icons.translate,
                             title: 'Language',
                             subTitle: value.selectedLanguage,
                           ),
                           SettingTile(
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              UpdateNumberPage.id,
+                            ),
                             icon: Icons.numbers,
                             title: 'Update Mobile Number',
                             subTitle: '80XXXXX46',
                           ),
                           SettingTile(
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              BackupPage.id,
+                            ),
                             icon: Icons.cloud_done_rounded,
                             title: 'Backup',
                             subTitle: 'Sync info, recovery number',
@@ -129,18 +166,27 @@ class SettingsPage extends StatelessWidget {
                             subTitle: 'App lock, PIN, password, sign out',
                           ),
                           SettingTile(
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              HelpPage.id,
+                            ),
                             icon: Icons.help,
                             title: 'Help',
                             subTitle: 'FAQs, contact us, privacy policy',
                           ),
                           SettingTile(
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              FindDefaulterPage.id,
+                            ),
                             icon: Icons.person_off,
                             title: 'Find Defaulter',
                           ),
                           SettingTile(
-                            onTap: () {},
+                            onTap: () => Navigator.pushNamed(
+                              context,
+                              SharePage.id,
+                            ),
                             icon: Icons.share,
                             title: 'Share',
                           ),

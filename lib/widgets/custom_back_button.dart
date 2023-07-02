@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({
@@ -10,24 +11,33 @@ class CustomBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        InkWell(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(
-            Icons.chevron_left,
-            size: 30.0,
-            weight: 10.0,
-          ),
+        Row(
+          children: [
+            InkWell(
+              onTap: () {
+                // FocusScope.of(context).unfocus();
+                // SystemChannels.textInput.invokeMethod('TextInput.hide');
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                Icons.chevron_left,
+                size: 30.0,
+                weight: 10.0,
+              ),
+            ),
+            const SizedBox(width: 8.0),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
         ),
-        const SizedBox(width: 8.0),
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-          ),
-        )
+        const SizedBox(height: 25.0),
       ],
     );
   }

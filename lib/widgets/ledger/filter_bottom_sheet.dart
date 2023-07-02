@@ -142,19 +142,19 @@ class FilterBottomSheet extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  CustomTextButton(
+                  CustomButton(
                     height: 35.0,
                     width: 20.0,
                     fontSize: 14.0,
-                    onPressed: () => Navigator.pop(context),
+                    onTap: () => Navigator.pop(context),
                     title: 'Cancel',
                     color: Colors.grey.shade800,
                   ),
-                  CustomTextButton(
+                  CustomButton(
                     height: 35.0,
                     width: 20.0,
                     fontSize: 14.0,
-                    onPressed: () {},
+                    onTap: () {},
                     title: 'Apply',
                   ),
                 ],

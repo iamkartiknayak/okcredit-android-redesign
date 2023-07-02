@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../model/data.dart';
 import '../../widgets/custom_back_button.dart';
 import '../../widgets/settings/setting_tile.dart';
+import '../../widgets/settings/custom_switch.dart';
 
 class SecurityPage extends StatelessWidget {
   const SecurityPage({super.key});
@@ -21,7 +22,6 @@ class SecurityPage extends StatelessWidget {
               return Column(
                 children: [
                   const CustomBackButton(title: 'Security'),
-                  const SizedBox(height: 20.0),
                   SettingTile(
                     onTap: () {},
                     icon: Icons.lock,
@@ -68,28 +68,6 @@ class SecurityPage extends StatelessWidget {
             },
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomSwitch extends StatelessWidget {
-  const CustomSwitch({
-    super.key,
-    required this.onChanged,
-    required this.value,
-  });
-
-  final Function(bool) onChanged;
-  final bool value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Transform.scale(
-      scale: 0.8,
-      child: Switch(
-        onChanged: onChanged,
-        value: value,
       ),
     );
   }

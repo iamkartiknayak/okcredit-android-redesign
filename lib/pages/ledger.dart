@@ -4,8 +4,8 @@ import 'package:redesign_okcredit/constants.dart';
 
 import '../model/data.dart';
 import '../widgets/ledger/filter_bottom_sheet.dart';
-import './customer_tab.dart';
-import './supplier_tab.dart';
+import 'ledger/customer_tab.dart';
+import 'ledger/supplier_tab.dart';
 import './ledger/add_contact.dart';
 import '../widgets/ledger/header.dart';
 import '../widgets/ledger/search_box.dart';
