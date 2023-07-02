@@ -18,6 +18,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   provider: ^6.0.5
+  font_awesome_flutter: ^10.5.0
 
 
 dev_dependencies:
@@ -33,4 +34,6 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/business_types/
+    - assets/images/business_categories/
 
