@@ -70,7 +70,9 @@ class DataModel with ChangeNotifier {
   }
 
   void resetFilter() {
-    _reminderDateFilter.forEach((element) => element[1] = false);
+    for (var element in _reminderDateFilter) {
+      element[1] = false;
+    }
     _selectedSortByFilter = 'Latest';
     notifyListeners();
   }
@@ -120,15 +122,13 @@ class DataModel with ChangeNotifier {
   List<List> get languageList => _languageList;
 
   void updateAppLanguage(String language) {
-    _languageList.forEach(
-      (element) {
-        if (element[0] != language) {
-          element[1] = false;
-        } else {
-          element[1] = true;
-        }
-      },
-    );
+    for (var element in _languageList) {
+      if (element[0] != language) {
+        element[1] = false;
+      } else {
+        element[1] = true;
+      }
+    }
 
     _selectedLanguage = language;
     notifyListeners();
@@ -147,16 +147,14 @@ class DataModel with ChangeNotifier {
   List<List> get businessTypes => _businessTypes;
 
   void updateBusinessType(String type) {
-    _businessTypes.forEach(
-      (element) {
-        if (element[0] != type) {
-          element[2] = false;
-        } else {
-          element[2] = true;
-          _selectedBusinessType = element[0];
-        }
-      },
-    );
+    for (var element in _businessTypes) {
+      if (element[0] != type) {
+        element[2] = false;
+      } else {
+        element[2] = true;
+        _selectedBusinessType = element[0];
+      }
+    }
 
     notifyListeners();
   }
@@ -189,16 +187,14 @@ class DataModel with ChangeNotifier {
   List<List> get businessCategories => _businessCategories;
 
   void updateBusinessCategory(String type) {
-    _businessCategories.forEach(
-      (element) {
-        if (element[0] != type) {
-          element[2] = false;
-        } else {
-          element[2] = true;
-          _selectedBusinessCategory = element[0];
-        }
-      },
-    );
+    for (var element in _businessCategories) {
+      if (element[0] != type) {
+        element[2] = false;
+      } else {
+        element[2] = true;
+        _selectedBusinessCategory = element[0];
+      }
+    }
 
     notifyListeners();
   }

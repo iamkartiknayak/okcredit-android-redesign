@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:redesign_okcredit/constants.dart';
-import 'package:redesign_okcredit/widgets/custom_text_button.dart';
 
+import '../../constants.dart';
 import '../../model/data.dart';
+import '../custom_text_button.dart';
 
 class FilterBottomSheet extends StatelessWidget {
   const FilterBottomSheet({
@@ -25,32 +25,12 @@ class FilterBottomSheet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.ideographic,
-                children: [
-                  const Text(
-                    'Filter',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      value.resetFilter();
-                      Navigator.pop(context);
-                    },
-                    child: const Text(
-                      'Clear',
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  )
-                ],
+              const Text(
+                'Filter',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 5.0),
               const Divider(color: kHighLightColor),
@@ -144,17 +124,20 @@ class FilterBottomSheet extends StatelessWidget {
                 children: [
                   CustomButton(
                     height: 35.0,
-                    width: 20.0,
+                    width: 80.0,
                     fontSize: 14.0,
-                    onTap: () => Navigator.pop(context),
+                    onTap: () {
+                      value.resetFilter();
+                      Navigator.pop(context);
+                    },
                     title: 'Cancel',
                     color: Colors.grey.shade800,
                   ),
                   CustomButton(
                     height: 35.0,
-                    width: 20.0,
+                    width: 80.0,
                     fontSize: 14.0,
-                    onTap: () {},
+                    onTap: () => Navigator.pop(context),
                     title: 'Apply',
                   ),
                 ],
