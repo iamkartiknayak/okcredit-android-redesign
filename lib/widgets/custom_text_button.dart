@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:redesign_okcredit/constants.dart';
+
+import '../constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -31,7 +32,7 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: margin ?? const EdgeInsets.symmetric(horizontal: 10.0),
-        height: height ?? 45.0,
+        height: height ?? 50.0,
         width: width ?? double.infinity,
         decoration: BoxDecoration(
           color: color ?? kPrimaryColor,

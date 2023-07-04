@@ -17,8 +17,8 @@ class CustomBackButton extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                // FocusScope.of(context).unfocus();
-                // SystemChannels.textInput.invokeMethod('TextInput.hide');
+                FocusScope.of(context).unfocus();
+                SystemChannels.textInput.invokeMethod('TextInput.hide');
                 Navigator.pop(context);
               },
               child: const Icon(

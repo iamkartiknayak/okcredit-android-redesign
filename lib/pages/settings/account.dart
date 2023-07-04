@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:redesign_okcredit/widgets/custom_back_button.dart';
+
+import '../../widgets/custom_back_button.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -8,10 +9,10 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
+          padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
           child: Column(
             children: [
               CustomBackButton(title: 'AccountPage'),

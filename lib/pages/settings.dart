@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:redesign_okcredit/constants.dart';
-import 'package:redesign_okcredit/model/data.dart';
-import 'package:redesign_okcredit/pages/settings/account.dart';
-import 'package:redesign_okcredit/pages/settings/backup.dart';
-import 'package:redesign_okcredit/pages/settings/find_defaulter.dart';
-import 'package:redesign_okcredit/pages/settings/help.dart';
-import 'package:redesign_okcredit/pages/settings/language.dart';
-import 'package:redesign_okcredit/pages/settings/profile.dart';
-import 'package:redesign_okcredit/pages/settings/security.dart';
-import 'package:redesign_okcredit/pages/settings/share.dart';
-import 'package:redesign_okcredit/pages/settings/subscription.dart';
-import 'package:redesign_okcredit/pages/settings/update_number.dart';
+
+import '../constants.dart';
+import '../model/data.dart';
+import './settings/help.dart';
+import './settings/share.dart';
+import './settings/backup.dart';
+import './settings/account.dart';
+import './settings/profile.dart';
+import './settings/language.dart';
+import './settings/security.dart';
+import './settings/subscription.dart';
+import './settings/update_number.dart';
+import './settings/find_defaulter.dart';
 
 import '../widgets/settings/setting_tile.dart';
 
@@ -79,6 +80,7 @@ class SettingsPage extends StatelessWidget {
                             'Edit',
                             style: TextStyle(
                               color: kPrimaryColor,
+                              fontSize: 15.0,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
