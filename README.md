@@ -1,16 +1,45 @@
-# redesign_okcredit
+# OkCredit UI Redesign in Flutter
+This project is a partial visual redesign of the OkCredit app using Flutter, a popular cross-platform framework for building mobile applications. The goal of this project is to create a visually appealing and user-friendly interface for the OkCredit app.
 
-A new Flutter project.
+### Project Structure
+ #### The project structure is organized in the following way:
 
-## Getting Started
+* lib: contains the main Dart code for the application
+* pages: contains the different screens for the application
+* widgets: contains the various common widgets used throughout the application
+* assets: contains any necessary assets used in the application 
 
-This project is a starting point for a Flutter application.
+### Installation
+#### Clone the repository using the following command:
+```bash    
+git clone https://github.com/iamkartiknayak/Flutter_UI_Clone_OkCredit.git
+```
+#### Rename the project directory before running flutter commands
+```bash
+mv Flutter_UI_Clone_OkCredit okcredit_redesign
+```
+#### Navigate to the project directory:
+```bash 
+cd whatsapp-clone-flutter
+```
+#### Install the dependencies:
+```bash 
+flutter pub get
+```
+#### Run the application:
+```bash 
+flutter run
+```
+### Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+<img src="./screenshots/ledger.jpg" alt="Example Image" width="250">&nbsp;&nbsp;&nbsp;
+<img src="./screenshots/accounts.jpg" alt="Example Image" width="250">&nbsp;&nbsp;&nbsp;
+<img src="./screenshots/add_contact.jpg" alt="Example Image" width="250"><br><br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img src="./screenshots/settings.jpg" alt="Example Image" width="250">&nbsp;&nbsp;&nbsp;
+<img src="./screenshots/profile.jpg" alt="Example Image" width="250">&nbsp;&nbsp;&nbsp;
+<img src="./screenshots/account.jpg" alt="Example Image" width="250"><br><br>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### Conclusion
+This OkCredit clone is a demonstration of how Flutter can be used to create beautiful and functional user interfaces. The code is open source and can be used as a starting point for your own Flutter projects.
