@@ -18,7 +18,7 @@ class BackupPage extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
           child: Column(
             children: [
-              const CustomBackButton(title: 'BackupPage'),
+              const CustomBackButton(title: 'Backup'),
               SettingTile(
                 removeLPadding: true,
                 title: const Row(

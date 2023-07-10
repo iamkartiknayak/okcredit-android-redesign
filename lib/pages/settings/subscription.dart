@@ -20,7 +20,7 @@ class SubscriptionPage extends StatelessWidget {
             builder: (context, value, child) {
               return Column(
                 children: [
-                  const CustomBackButton(title: 'Subscribe to premium'),
+                  const CustomBackButton(title: 'Subscribe to Premium'),
                   SubscriptionCard(
                     color: Colors.orange,
                     headerIcon: Icons.stars,

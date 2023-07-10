@@ -17,7 +17,7 @@ class HelpPage extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
           child: Column(
             children: [
-              const CustomBackButton(title: 'HelpPage'),
+              const CustomBackButton(title: 'Help'),
               const SettingTile(
                 icon: Icons.help,
                 title: 'How to use OkCredit?',
