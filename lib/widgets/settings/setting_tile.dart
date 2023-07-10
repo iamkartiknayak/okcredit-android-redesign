@@ -28,7 +28,7 @@ class SettingTile extends StatelessWidget {
       children: [
         ListTile(
           minLeadingWidth: 0.0,
-          onTap: onTap ?? null,
+          onTap: onTap,
           contentPadding: EdgeInsets.only(
             left: removeLPadding == true ? 0.0 : 10.0,
           ),
