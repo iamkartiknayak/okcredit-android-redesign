@@ -20,7 +20,7 @@ mv Flutter_UI_Clone_OkCredit okcredit_redesign
 ```
 #### Navigate to the project directory:
 ```bash 
-cd whatsapp-clone-flutter
+cd okcredit_redesign
 ```
 #### Install the dependencies:
 ```bash 
