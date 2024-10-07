@@ -12,11 +12,11 @@ This project is a partial visual redesign of the OkCredit app using Flutter, a p
 ### Installation
 #### Clone the repository using the following command:
 ```bash    
-git clone https://github.com/iamkartiknayak/Flutter_UI_Clone_OkCredit.git
+git clone https://github.com/iamkartiknayak/okcredit-android-redesign.git
 ```
 #### Rename the project directory before running flutter commands
 ```bash
-mv Flutter_UI_Clone_OkCredit okcredit_redesign
+mv okcredit-android-redesign okcredit_redesign
 ```
 #### Navigate to the project directory:
 ```bash 
